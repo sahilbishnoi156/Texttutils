@@ -13,6 +13,19 @@ function App() {
   const [alert, setAlert] = useState(null);
   const [mode, setmode] = useState("body-secondary");
   const [txtMode, settxtMode] = useState("dark");
+  const [flexDirection, setFlexDirection] = useState(window.innerWidth < 1000 ?"column":"row");
+  const [passInfo, setPassInfo] = useState(window.innerWidth < 1000 ?"":"(must contain one uppercase, lowercase, number and special character)")
+  window.addEventListener("resize", () =>{
+    if (window.innerWidth < 1000) {
+      setFlexDirection("column");
+      setPassInfo("");
+    }
+    else{
+      setFlexDirection("row");
+      setPassInfo('(must contain one uppercase, lowercase, number and special character)');
+    }
+  });
+
   const toggleMode = () => {
     if (mode === "dark") {
       setmode("body-secondary");
@@ -37,26 +50,38 @@ function App() {
   }
   return (
     <Router>
-      <div id="main">
-        <Navbar mode={mode} toggleMode={toggleMode} txtMode={txtMode} />
+      <div id="main" style={{
+        boxSizing:"border-box",
+      }}>
+        <Navbar mode={mode} toggleMode={toggleMode} txtMode={txtMode} flexDirection={flexDirection}/>
+        <div className="container my-1" style={{
+          height:"30px",
+          width:"100%"
+        }}>
         <Alert alertObj={alert}/>
+        </div>
+        <div style={{
+          boxSizing:"border-box",
+          padding:"20px"
+        }}>
         <div
-          className={`container my-5 bg-${mode} p-5 rounded-5`}
+          className={`container my-5 bg-${mode} p-4 rounded-5 `}
           style={{
             boxShadow: `.1px .1px 26px ${mode === "body-secondary" ? "grey" : "white"
-              }`,
+              }`
           }}
         >
           <Routes>
-          <Route exact path="/login" element={<Form txtMode={txtMode}/>}>
+          <Route exact path="/login" element={<Form txtMode={txtMode} passInfo={passInfo}/>}>
           </Route>
           <Route exact path="/projects" element={<Projects txtMode={txtMode} mode={mode}/>}>
           </Route>
           <Route exact  path="/" element={<Carousel mode={mode} textMode={txtMode} />}>
           </Route>
-          <Route exact  path="/textconverter" element={<Textarea heading="Enter your text below :" showAlert={showAlert} mode={mode} textMode={txtMode}/>}>
+          <Route exact  path="/textconverter" element={<Textarea heading="Enter your text below :" showAlert={showAlert} mode={mode} textMode={txtMode} flexDirection={flexDirection}/>}>
           </Route>
         </Routes>
+        </div>
         </div>
       </div>
     </Router>

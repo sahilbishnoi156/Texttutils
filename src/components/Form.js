@@ -48,8 +48,17 @@ export default function Form(props) {
             passInput.type = "password";
         }
     };
+    const handleSubmit = (e) =>{
+        if (email === "" || password === "" || passwordChecker !== "") {
+            e.preventDefault();
+        };
+    };
   return (
+    
     <form className={`text-${props.txtMode}`}>
+        <div >
+            <h1 className="text-center mb-3">Login here</h1>
+        </div>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} name='user-email' onChange={handleEmail}/>
@@ -57,7 +66,7 @@ export default function Form(props) {
     <div id="emailHelp" className="form-text text-danger fs-4">{emailChecker}</div>
   </div>
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">Password (must contain one uppercase, lowercase, number and special character)</label>
+    <label htmlFor="exampleInputPassword1" className="form-label">Password {props.passInfo}</label>
     <input type="password" className="form-control" name='user-password' id="exampleInputPassword1" value={password} onChange={handelPassword}/>
   </div>
     <div id="emailHelp" className="form-text text-danger fs-4">{passwordChecker}</div>
@@ -65,7 +74,7 @@ export default function Form(props) {
     <input type="checkbox" className="form-check-input" id="exampleCheck1" onChange={showPassword}/>
     <label className="form-check-label" htmlFor="exampleCheck1">show password</label>
   </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
 </form>
   );
 }
