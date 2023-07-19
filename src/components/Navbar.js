@@ -5,7 +5,7 @@ export default function Navbar(props) {
           <div className={`navbar py-1 px-3 bg-${props.mode} d-flex justify-content-between flex-${props.flexDirection}`}>
           <ul className="nav justify-content-center">
       <li className="nav-item">
-        <Link className={`nav-link active text-${props.txtMode}`} aria-current="page" to="/">Home</Link>
+        <Link className={`nav-link active text-${props.txtMode}`} aria-current="page" to="/React-App/">Home</Link>
       </li>
       <li className="nav-item">
         <Link className={`nav-link text-${props.txtMode}`} to="/projects">Projects</Link>
