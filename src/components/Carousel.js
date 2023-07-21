@@ -17,7 +17,7 @@ export default function Carousel(props) {
       <Loading/>
       </div>
         
-      <img src="https://picsum.photos/1250/400" className="d-block " alt="Not found" style={{
+      <img src="https://picsum.photos/1250/600" className="d-block " alt="Not found" style={{
         minWidth:"17rem", objectFit:"contain"
       }} onLoad={(e)=>setLoading(false)}/>
       <div className={`carousel-caption d-none d-md-block`}>
