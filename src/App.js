@@ -76,7 +76,7 @@ function App() {
           </Route>
           <Route exact path="/projects" element={<Projects txtMode={txtMode} mode={mode}/>}>
           </Route>
-          <Route exact  path="/React-App/" element={<Carousel mode={mode} textMode={txtMode} />}>
+          <Route exact  path="/Text-tutils/" element={<Carousel mode={mode} textMode={txtMode} />}>
           </Route>
           <Route exact  path="/textconverter" element={<Textarea heading="Enter your text below :" showAlert={showAlert} mode={mode} textMode={txtMode} flexDirection={flexDirection}/>}>
           </Route>
