@@ -72,13 +72,13 @@ function App() {
           }}
         >
           <Routes>
-          <Route exact path="/login" element={<Form txtMode={txtMode} passInfo={passInfo}/>}>
+          <Route exact path="/Texttutils/login" element={<Form txtMode={txtMode} passInfo={passInfo}/>}>
           </Route>
-          <Route exact path="/projects" element={<Projects txtMode={txtMode} mode={mode}/>}>
+          <Route exact path="/Texttutils/projects" element={<Projects txtMode={txtMode} mode={mode}/>}>
           </Route>
           <Route exact  path="/Texttutils/" element={<Carousel mode={mode} textMode={txtMode} />}>
           </Route>
-          <Route exact  path="/textconverter" element={<Textarea heading="Enter your text below :" showAlert={showAlert} mode={mode} textMode={txtMode} flexDirection={flexDirection}/>}>
+          <Route exact  path="/Texttutils/textconverter" element={<Textarea heading="Enter your text below :" showAlert={showAlert} mode={mode} textMode={txtMode} flexDirection={flexDirection}/>}>
           </Route>
         </Routes>
         </div>
