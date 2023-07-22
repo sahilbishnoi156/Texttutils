@@ -33,7 +33,7 @@ export default function Projects(props) {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href={props.index === 0? Navigate("/texttutils"):props.index === 1? "https://sahilbishnoi156.github.io/PASS-GEN/":"https://sahilbishnoi156.github.io/SG-MEDIA/"} className={`btn btn-${props.txtMode}`} style={{cursor:"pointer",width:"50%"}} target="_blank" rel="noreferrer">
+          <a href={props.index === 0? navigate("/texttutils"):props.index === 1? "https://sahilbishnoi156.github.io/PASS-GEN/":"https://sahilbishnoi156.github.io/SG-MEDIA/"} className={`btn btn-${props.txtMode}`} style={{cursor:"pointer",width:"50%"}} target="_blank" rel="noreferrer">
             Explore
           </a>
         </div>
